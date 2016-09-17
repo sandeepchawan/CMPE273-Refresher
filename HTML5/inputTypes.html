@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div class="row">
+	<div class="searchme">
+			<input type="search" name="search" size=100 placeholder="Search for your favorite products" autofocus autocomplete="on"></input>
+			<input type="submit" value="Search"></input>
+	</div>
+
+	<div class="credentials">
+		<input id="name" type="text" required autocomplete="on" placeholder="Username"></input>
+		<input id="pass" type="password" required placeholder="password"></input>
+		<input type="submit" value="login"></input>
+
+	</div>
+
+	<div class="contact">
+		<input type="button" name="contactbutton" value="Contact us"></input>
+	</div>
+
+</div>
+
+<div class="newuser">
+		<form>
+		Register<br>
+		<input type="text" name="fname" placeholder="First Name" pattern="^[a-zA-Z]+$" required><br>
+		<input type="text" name="lname" placeholder="Last Name" pattern="^[a-zA-Z]+$" required><br>
+		<input type="email" name="uemail" placeholder="Email Address" required><br>
+		<input type="date" name="dob" placeholder="Date of birth"><br>
+		<input type="submit" name="submit">
+		<input type="reset" name="reset" value="Reset">
+		</form>
+</div>
+
+</body>
+
+<head>
+<style>
+
+div {
+	display: block;
+}
+
+body {
+	border-color: blue;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	background-color: lightgreen;
+}	
+
+.searchme {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-flex;
+	background-color: transparent;
+	width: 700px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.newuser {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-flex;
+	background-color: lightgrey;
+}
+
+.credentials , .contact {
+	display: inline-flex;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: transparent;
+	background-color: none;
+}
+
+</style>
+</head>
+
+</html>

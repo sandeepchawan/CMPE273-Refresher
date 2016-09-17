@@ -1,0 +1,50 @@
+<input type="text" id="uname" name="username" placeholder="username"><br>
+<input type="email" id="uemail" name="email" placeholder="email"><br>
+<button id="buttonID" name="submit-button" onclick="dataReceiver()">Register</button>
+<button id="showID" name="show-button" onclick="showRegisteredUsers()">Show Reg Users</button>
+<button id="resetID" name="reset-button" onclick="clearAllUsers()">Clear All Users</button>
+
+<p id="showList"></p>
+
+<script type="text/javascript">
+function dataReceiver() {
+	var uname = document.getElementById("uname");
+	var uemail = document.getElementById("uemail");
+	console.log(uname.value);
+	console.log(uemail.value);
+
+	if (browserSupportsLocalStorage()) {
+		localStorage.setItem(uname.value, uemail.value);
+	}
+}
+
+function showRegisteredUsers() {
+	var i;
+	console.log(localStorage.length);
+	var showList = "<table border = '1'><tr><th width=100><b>Name</b></th><th width=100><b>Email</b></th></tr>\n <br>";
+	for (i=0;i<localStorage.length;i++) {
+		key = localStorage.key(i);
+		showList += "<tr><td width=50>" + key + "</td>\n<td width=50>"
+                    + localStorage.getItem(key) + "</td></tr>\n" + "<br>";
+		console.log(key, localStorage.getItem(key));
+
+	}
+	showList += "</table>";
+	document.getElementById("showList").innerHTML = showList;
+
+}
+
+function browserSupportsLocalStorage() {
+	if (window.localStorage !== null && 'localStorage' in window) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function clearAllUsers() {
+	localStorage.clear();
+	document.getElementById("showList").innerHTML = "";
+}
+
+</script>
